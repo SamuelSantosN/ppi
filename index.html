@@ -49,8 +49,16 @@
             padding: 8px;
             width: 150px;
             margin: 10px;
-            border: 1px solid #ccc;
+            background-color: #ff0000;
+            color: white;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #cc0000;
         }
 
         .filtro label {
@@ -154,7 +162,7 @@
             <label for="ano">Ano</label>
             <input type="text" id="ano" placeholder="Ex: 2020">
 
-            <button><strong>Buscar Véiculos</strong></button>
+            <button type="submit"><strong>Buscar Véiculos</strong></button>
         </div>
 
         </div>
