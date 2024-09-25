@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Inicial da WebCar Motors">
+    <title>WebCar Motors</title>
+    <link rel="stylesheet" href="/style/style_index.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <div>
+            <h1>Bem-vindo à WebCar Motors</h1>
+            <p>A 1 clique do seu sonho de consumo</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cadastro.html">Criar conta</a></li>
+            <li><a href="login.html">Entrar</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="filtro">
+            <form action="" method="get">
+                <div>
+                    <label for="marca">Marca</label>
+                    <select id="marca" name="marca">
+                        <option value="" selected>[Selecione]</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Chevrolet">Chevrolet</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Toyota">Toyota</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="modelo">Modelo</label>
+                    <select id="modelo" name="modelo">
+                        <option value="" selected>[Selecione]</option>
+                        <option value="fiesta">Fiesta</option>
+                        <option value="cruze">Cruze</option>
+                        <option value="gol">Gol</option>
+                        <option value="corolla">Corolla</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="localizacao">Localização</label>
+                    <select id="localizacao" name="localizacao">
+                        <option value="" selected>[Selecione]</option>
+                        <option value="uberlandia">Uberlândia</option>
+                        <option value="araguari">Araguari</option>
+                        <option value="uberaba">Uberaba</option>
+                    </select>
+                </div>
+                <button type="submit"><strong>Buscar Veículos</strong></button>
+            </form>
+        </section>
+
+        <section class="container">
+
+        </section>
+    </main>
+
+    <footer>&copy; Todos os direitos reservados à WebCar Motors</footer>
+
+    <script>
+
+         const veiculos = [
+            {
+                marca: 'Ford',
+                modelo: 'Fiesta',
+                ano: 2020,
+                localizacao: 'Uberlândia',
+                valor: 45000,
+                imagens: ['/imagens/fiesta1.png', '/imagens/fiesta2.jpg', '/imagens/fiesta3.jpg']
+            },
+            {
+                marca: 'Toyota',
+                modelo: 'Corolla',
+                ano: 2019,
+                localizacao: 'Uberaba',
+                valor: 80000,
+                imagens: ['/imagens/corolla1.png', '/imagens/corolla2.png', '/imagens/corolla3.png']
+            },
+            {
+                marca: 'Volkswagen',
+                modelo: 'Gol',
+                ano: 2018,
+                localizacao: 'Araguari',
+                valor: 30000,
+                imagens: ['/imagens/gol1.png', '/imagens/gol2.jpg', '/imagens/gol3.jpg']
+            },
+            {
+                marca: 'Honda',
+                modelo: 'Civic',
+                ano: 2021,
+                localizacao: 'Uberlândia',
+                valor: 100000,
+                imagens: ['/imagens/hondacivic1.png', '/imagens/hondacivic2.jpeg', '/imagens/hondacivic3.jpg']
+            },
+            {
+                marca: 'Jeep',
+                modelo: 'Renegade',
+                ano: 2020,
+                localizacao: 'Araguari',
+                valor: 95000,
+                imagens: ['/imagens/jeeprenegade1.png', '/imagens/jeeprenegade2.jpg', '/imagens/jeeprenegade3.jpg']
+            },
+            {
+                marca: 'Volkswagen',
+                modelo: 'Polo',
+                ano: 2017,
+                localizacao: 'Uberaba',
+                valor: 50000,
+                imagens: ['/imagens/polo1.png', '/imagens/polo2.jpg', '/imagens/polo3.jpg']
+            },
+            {
+                marca: 'Toyota',
+                modelo: 'Hilux',
+                ano: 2019,
+                localizacao: 'Uberlândia',
+                valor: 120000,
+                imagens: ['/imagens/hillux1.png', '/imagens/hillux2.jpg', '/imagens/hillux3.jpg']
+            },
+            {
+                marca: 'Chevrolet',
+                modelo: 'Onix',
+                ano: 2021,
+                localizacao: 'Uberaba',
+                valor: 65000,
+                imagens: ['/imagens/onix1.png', '/imagens/onix2.png', '/imagens/onix3.jpg']
+            },
+        ]; const container = document.querySelector('.container');
+
+        veiculos.forEach(veiculo => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+            card.onclick = () => redirecionarParaDetalhe(veiculo.marca, veiculo.modelo, veiculo.ano, veiculo.localizacao, veiculo.valor, veiculo.imagens);
+
+            card.innerHTML = `
+                <img src="${veiculo.imagens[0]}" alt="${veiculo.marca} ${veiculo.modelo}">
+                <h3>${veiculo.marca} ${veiculo.modelo}</h3>
+                <p>Marca: ${veiculo.marca}</p>
+                <p>Modelo: ${veiculo.modelo}</p>
+                <p>Ano: ${veiculo.ano}</p>
+                <p>Localização: ${veiculo.localizacao}</p>
+                <span>R$ ${veiculo.valor}</span>
+            `;
+            
+            container.appendChild(card);
+        });
+
+        function redirecionarParaDetalhe(marca, modelo, ano, localizacao, valor, imagens) {
+            const url = new URL('paginasPublicas/detalhes.html', window.location.origin); 
+
+            url.searchParams.append('marca', marca);
+            url.searchParams.append('modelo', modelo);
+            url.searchParams.append('ano', ano);
+            url.searchParams.append('localizacao', localizacao);
+            url.searchParams.append('valor', valor);
+            url.searchParams.append('imagens', JSON.stringify(imagens)); 
+
+            window.location.href = url.toString();
+        }
+
+    </script>
+</body>
+
+</html>
