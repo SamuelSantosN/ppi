@@ -147,7 +147,17 @@ main {
 
     box-shadow: 0 4px 8px #0000002a;
 }
+.card button{
+    margin: 3px;
+    height: 35px;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
 
+}
 .card:hover {
     cursor: pointer;
     box-shadow: 0 4px 8px 2px rgba(255, 0, 0, 0.178);
