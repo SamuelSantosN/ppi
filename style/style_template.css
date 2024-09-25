@@ -67,6 +67,8 @@ button:active {
 
 
 main {
+    margin: auto;
+    width: 90%;
     flex-grow: 1;
 }
 
