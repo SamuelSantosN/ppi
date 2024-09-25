@@ -66,8 +66,6 @@ button:active {
     outline: 2px solid #970e0e;
 }
 
-
-
 main {
     flex-grow: 1;
     width: 50%;
@@ -85,7 +83,7 @@ section {
 
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 0px 0px 10px 10px;
     box-shadow: 0 4px 8px #0000003a;
 }
 
@@ -94,6 +92,7 @@ section label {
 }
 
 section input {
+    box-sizing: border-box;
     padding: 8px 0px 8px 8px;
     width: 100%;
     margin: 5px 0;
@@ -126,9 +125,6 @@ section button:hover {
     background-color: #cc0000;
 }
 
-
-
-
 footer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -137,9 +133,4 @@ footer {
     display: flex;
     justify-content: center;
     padding: 10px;
-
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
 }
