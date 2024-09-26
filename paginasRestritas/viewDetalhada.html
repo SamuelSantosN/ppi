@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Detalhes do veículo na WebCar Motors">
     <title>Detalhes do Veículo - WebCar Motors</title>
-    <link rel="stylesheet" href="../style/style_detalhe.css">
+    <link rel="stylesheet" href="../style/style_viewDetalhada.css">
 </head>
 
 <body>
     <header>
-        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
         <div>
             <h1>Bem-vindo à WebCar Motors</h1>
             <p>A 1 clique do seu sonho de consumo</p>
@@ -23,13 +23,15 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="cadastroAnuncio.html">Criar novo anúncio</a></li>
             <li><a href="listarAnuncio.html">Listar anúncio</a></li>
-            <li><a href="/paginasPublicas/index.html">Logoff</a></li>
+            <li><a href="../paginasPublicas/index.html">Logoff</a></li>
         </ul>
     </nav>
 
     <main>
         <section class="detalhes-veiculo">
+            <h1>Detalhes</h1>
             <div class="detalhe-card" id="detalhe-card">
+
             </div>
         </section>
     </main>
@@ -37,17 +39,17 @@
     <footer>&copy; Todos os direitos reservados à WebCar Motors</footer>
 
     <script>
-            const params = new URLSearchParams(window.location.search);
-            const marca = params.get('marca');
-            const modelo = params.get('modelo');
-            const ano = params.get('ano');
-            const localizacao = params.get('localizacao');
-            const valor = params.get('valor');
-            const imagens = JSON.parse(params.get('imagens'));
+        const params = new URLSearchParams(window.location.search);
+        const marca = params.get('marca');
+        const modelo = params.get('modelo');
+        const ano = params.get('ano');
+        const localizacao = params.get('localizacao');
+        const valor = params.get('valor');
+        const imagens = JSON.parse(params.get('imagens'));
 
-            const detalheCard = document.getElementById('detalhe-card');
-            let imagensHTML = `<div class="galeria-imagens">` + imagens.map(img => `<img src="${img}" alt="${marca} ${modelo}">`).join('') + `</div>`;
-            detalheCard.innerHTML = `
+        const detalheCard = document.getElementById('detalhe-card');
+        let imagensHTML = `<div class="galeria-imagens">` + imagens.map(img => `<img src="${img}" alt="${marca} ${modelo}">`).join('') + `</div>`;
+        detalheCard.innerHTML = `
                 <h2>${marca} ${modelo}</h2>
                 ${imagensHTML}
                 <p><strong>Marca:</strong> ${marca}</p>

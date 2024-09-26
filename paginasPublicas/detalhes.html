@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
         <div>
             <h1>Bem-vindo à WebCar Motors</h1>
             <p>A 1 clique do seu sonho de consumo</p>
@@ -55,17 +55,17 @@
     <footer>&copy; Todos os direitos reservados à WebCar Motors</footer>
 
     <script>
-            const params = new URLSearchParams(window.location.search);
-            const marca = params.get('marca');
-            const modelo = params.get('modelo');
-            const ano = params.get('ano');
-            const localizacao = params.get('localizacao');
-            const valor = params.get('valor');
-            const imagens = JSON.parse(params.get('imagens'));
+        const params = new URLSearchParams(window.location.search);
+        const marca = params.get('marca');
+        const modelo = params.get('modelo');
+        const ano = params.get('ano');
+        const localizacao = params.get('localizacao');
+        const valor = params.get('valor');
+        const imagens = JSON.parse(params.get('imagens'));
 
-            const detalheCard = document.getElementById('detalhe-card');
-            let imagensHTML = `<div class="galeria-imagens">` + imagens.map(img => `<img src="${img}" alt="${marca} ${modelo}">`).join('') + `</div>`;
-            detalheCard.innerHTML = `
+        const detalheCard = document.getElementById('detalhe-card');
+        let imagensHTML = `<div class="galeria-imagens">` + imagens.map(img => `<img src="${img}" alt="${marca} ${modelo}">`).join('') + `</div>`;
+        detalheCard.innerHTML = `
                 <h2>${marca} ${modelo}</h2>
                 ${imagensHTML}
                 <p><strong>Marca:</strong> ${marca}</p>

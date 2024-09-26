@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
         <div>
             <h1>Bem-vindo de volta!</h1>
             <p>Pedro Dantas</p>
@@ -23,7 +23,7 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="cadastroAnuncio.html">Criar novo anúncio</a></li>
             <li><a href="listarAnuncio.html">Listar anúncio</a></li>
-            <li><a href="/paginasPublicas/index.html">Logoff</a></li>
+            <li><a href="../paginasPublicas/index.html">Logoff</a></li>
         </ul>
     </nav>
 
@@ -47,7 +47,7 @@
                 ano: 2020,
                 localizacao: 'Uberlândia',
                 valor: 45000,
-                imagens: ['/imagens/fiesta1.png', '/imagens/fiesta2.jpg', '/imagens/fiesta3.jpg']
+                imagens: ['../imagens/fiesta1.png', '../imagens/fiesta2.jpg', '../imagens/fiesta3.jpg']
             },
             {
                 marca: 'Volkswagen',
@@ -55,7 +55,7 @@
                 ano: 2017,
                 localizacao: 'Uberaba',
                 valor: 50000,
-                imagens: ['/imagens/polo1.png', '/imagens/polo2.jpg', '/imagens/polo3.jpg']
+                imagens: ['../imagens/polo1.png', '../imagens/polo2.jpg', '../imagens/polo3.jpg']
             },
             {
                 marca: 'Toyota',
@@ -63,7 +63,7 @@
                 ano: 2019,
                 localizacao: 'Uberlândia',
                 valor: 120000,
-                imagens: ['/imagens/hillux1.png', '/imagens/hillux2.jpg', '/imagens/hillux3.jpg']
+                imagens: ['../imagens/hillux1.png', '../imagens/hillux2.jpg', '../imagens/hillux3.jpg']
             },
         ];
 
@@ -89,7 +89,7 @@
         });
 
         function redirecionarParaDetalhe(marca, modelo, ano, localizacao, valor, imagens) {
-            const url = new URL('paginasRestritas/viewDetalhada.html', window.location.origin);
+            const url = new URL('ppi/paginasRestritas/viewDetalhada.html', window.location.origin);
             url.searchParams.append('marca', marca);
             url.searchParams.append('modelo', modelo);
             url.searchParams.append('ano', ano);
@@ -103,7 +103,7 @@
             const confirmacao = confirm(`Tem certeza que deseja excluir o anúncio de ${marca} ${modelo}?`);
             if (confirmacao) {
                 alert(`Anúncio de ${marca} ${modelo} excluído com sucesso!`);
-            } 
+            }
         }
     </script>
 </body>

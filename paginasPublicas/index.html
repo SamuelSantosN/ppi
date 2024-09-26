@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
         <div>
             <h1>Bem-vindo à WebCar Motors</h1>
             <p>A 1 clique do seu sonho de consumo</p>
@@ -78,7 +78,7 @@
                 ano: 2020,
                 localizacao: 'Uberlândia',
                 valor: 45000,
-                imagens: ['/imagens/fiesta1.png', '/imagens/fiesta2.jpg', '/imagens/fiesta3.jpg']
+                imagens: ['../imagens/fiesta1.png', '../imagens/fiesta2.jpg', '../imagens/fiesta3.jpg']
             },
             {
                 marca: 'Toyota',
@@ -86,7 +86,7 @@
                 ano: 2019,
                 localizacao: 'Uberaba',
                 valor: 80000,
-                imagens: ['/imagens/corolla1.png', '/imagens/corolla2.png', '/imagens/corolla3.png']
+                imagens: ['../imagens/corolla1.png', '../imagens/corolla2.png', '../imagens/corolla3.png']
             },
             {
                 marca: 'Volkswagen',
@@ -94,7 +94,7 @@
                 ano: 2018,
                 localizacao: 'Araguari',
                 valor: 30000,
-                imagens: ['/imagens/gol1.png', '/imagens/gol2.jpg', '/imagens/gol3.jpg']
+                imagens: ['../imagens/gol1.png', '../imagens/gol2.jpg', '../imagens/gol3.jpg']
             },
             {
                 marca: 'Honda',
@@ -102,7 +102,7 @@
                 ano: 2021,
                 localizacao: 'Uberlândia',
                 valor: 100000,
-                imagens: ['/imagens/hondacivic1.png', '/imagens/hondacivic2.jpeg', '/imagens/hondacivic3.jpg']
+                imagens: ['../imagens/hondacivic1.png', '../imagens/hondacivic2.jpeg', '../imagens/hondacivic3.jpg']
             },
             {
                 marca: 'Jeep',
@@ -110,7 +110,7 @@
                 ano: 2020,
                 localizacao: 'Araguari',
                 valor: 95000,
-                imagens: ['/imagens/jeeprenegade1.png', '/imagens/jeeprenegade2.jpg', '/imagens/jeeprenegade3.jpg']
+                imagens: ['../imagens/jeeprenegade1.png', '../imagens/jeeprenegade2.jpg', '../imagens/jeeprenegade3.jpg']
             },
             {
                 marca: 'Volkswagen',
@@ -118,7 +118,7 @@
                 ano: 2017,
                 localizacao: 'Uberaba',
                 valor: 50000,
-                imagens: ['/imagens/polo1.png', '/imagens/polo2.jpg', '/imagens/polo3.jpg']
+                imagens: ['../imagens/polo1.png', '../imagens/polo2.jpg', '../imagens/polo3.jpg']
             },
             {
                 marca: 'Toyota',
@@ -126,7 +126,7 @@
                 ano: 2019,
                 localizacao: 'Uberlândia',
                 valor: 120000,
-                imagens: ['/imagens/hillux1.png', '/imagens/hillux2.jpg', '/imagens/hillux3.jpg']
+                imagens: ['../imagens/hillux1.png', '../imagens/hillux2.jpg', '../imagens/hillux3.jpg']
             },
             {
                 marca: 'Chevrolet',
@@ -134,7 +134,7 @@
                 ano: 2021,
                 localizacao: 'Uberaba',
                 valor: 65000,
-                imagens: ['/imagens/onix1.png', '/imagens/onix2.png', '/imagens/onix3.jpg']
+                imagens: ['../imagens/onix1.png', '../imagens/onix2.png', '../imagens/onix3.jpg']
             },
         ]; const container = document.querySelector('.container');
 
@@ -157,7 +157,7 @@
         });
 
         function redirecionarParaDetalhe(marca, modelo, ano, localizacao, valor, imagens) {
-            const url = new URL('paginasPublicas/detalhes.html', window.location.origin); 
+            const url = new URL('ppi/paginasPublicas/detalhes.html', window.location.origin); 
 
             url.searchParams.append('marca', marca);
             url.searchParams.append('modelo', modelo);
