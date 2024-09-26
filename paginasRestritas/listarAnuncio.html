@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página Home após o login na WebCar Motors">
+    <title>WebCar Motors</title>
+    <link rel="stylesheet" href="../style/style_listarAnuncio.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="/imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <div>
+            <h1>Bem-vindo de volta!</h1>
+            <p>Pedro Dantas</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="cadastroAnuncio.html">Criar novo anúncio</a></li>
+            <li><a href="listarAnuncio.html">Listar anúncio</a></li>
+            <li><a href="/paginasPublicas/index.html">Logoff</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h1>Meus Anúncios</h1>
+        </section>
+
+        <section class="container">
+
+        </section>
+    </main>
+
+    <footer>&copy; Todos os direitos reservado à WebCar Motors</footer>
+
+    <script>
+        const veiculos = [
+            {
+                marca: 'Ford',
+                modelo: 'Fiesta',
+                ano: 2020,
+                localizacao: 'Uberlândia',
+                valor: 45000,
+                imagens: ['/imagens/fiesta1.png', '/imagens/fiesta2.jpg', '/imagens/fiesta3.jpg']
+            },
+            {
+                marca: 'Volkswagen',
+                modelo: 'Polo',
+                ano: 2017,
+                localizacao: 'Uberaba',
+                valor: 50000,
+                imagens: ['/imagens/polo1.png', '/imagens/polo2.jpg', '/imagens/polo3.jpg']
+            },
+            {
+                marca: 'Toyota',
+                modelo: 'Hilux',
+                ano: 2019,
+                localizacao: 'Uberlândia',
+                valor: 120000,
+                imagens: ['/imagens/hillux1.png', '/imagens/hillux2.jpg', '/imagens/hillux3.jpg']
+            },
+        ];
+
+        const container = document.querySelector('.container');
+
+        veiculos.forEach(veiculo => {
+            const anuncio = document.createElement('div');
+            anuncio.classList.add('anuncio');
+
+            anuncio.innerHTML = `
+                <img src="${veiculo.imagens[0]}" alt="${veiculo.marca} ${veiculo.modelo}">
+                <h3>${veiculo.marca} ${veiculo.modelo}</h3>
+                <p>Ano: ${veiculo.ano}</p>
+                <span>R$ ${veiculo.valor}</span>
+                <div class="buttons">
+                    <button onclick="redirecionarParaDetalhe('${veiculo.marca}', '${veiculo.modelo}', ${veiculo.ano}, '${veiculo.localizacao}', ${veiculo.valor}, '${JSON.stringify(veiculo.imagens).replace(/"/g, '&quot;')}')">Ver Detalhes</button>
+                    <button onclick="verInteresses('${veiculo.marca}', '${veiculo.modelo}')">Ver Interesses</button>
+                    <button onclick="excluirAnuncio('${veiculo.marca}', '${veiculo.modelo}')">Excluir</button>
+                </div>
+            `;
+
+            container.appendChild(anuncio);
+        });
+
+        function redirecionarParaDetalhe(marca, modelo, ano, localizacao, valor, imagens) {
+            const url = new URL('paginasRestritas/viewDetalhada.html', window.location.origin);
+            url.searchParams.append('marca', marca);
+            url.searchParams.append('modelo', modelo);
+            url.searchParams.append('ano', ano);
+            url.searchParams.append('localizacao', localizacao);
+            url.searchParams.append('valor', valor);
+            url.searchParams.append('imagens', imagens);
+            window.location.href = url.toString();
+        }
+
+        function excluirAnuncio(marca, modelo) {
+            const confirmacao = confirm(`Tem certeza que deseja excluir o anúncio de ${marca} ${modelo}?`);
+            if (confirmacao) {
+                alert(`Anúncio de ${marca} ${modelo} excluído com sucesso!`);
+            } 
+        }
+    </script>
+</body>
+
+</html>
