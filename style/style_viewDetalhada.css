@@ -102,17 +102,16 @@ main {
 }
 
 .galeria-imagens img {
-    width: 350px; /* Define um tamanho fixo para as imagens */
-    height: 200px; /* Mantém a altura fixa */
-    object-fit: cover; /* Corta a imagem para preencher o container sem distorção */
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease; /* Adiciona um efeito suave ao passar o mouse */
+    transition: transform 0.3s ease;
 }
 
 .galeria-imagens img:hover {
-    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
-
 
 
 footer {

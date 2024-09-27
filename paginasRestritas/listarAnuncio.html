@@ -89,7 +89,7 @@
         });
 
         function redirecionarParaDetalhe(marca, modelo, ano, localizacao, valor, imagens) {
-            const url = new URL('ppi/paginasRestritas/viewDetalhada.html', window.location.origin);
+            const url = new URL('paginasRestritas/viewDetalhada.html', window.location.origin);
             url.searchParams.append('marca', marca);
             url.searchParams.append('modelo', modelo);
             url.searchParams.append('ano', ano);
@@ -102,9 +102,18 @@
         function excluirAnuncio(marca, modelo) {
             const confirmacao = confirm(`Tem certeza que deseja excluir o anúncio de ${marca} ${modelo}?`);
             if (confirmacao) {
-                alert(`Anúncio de ${marca} ${modelo} excluído com sucesso!`);
+                const anuncios = document.querySelectorAll('.anuncio');
+
+                anuncios.forEach(anuncio => {
+                    const titulo = anuncio.querySelector('h3').textContent;
+                    if (titulo.includes(`${marca} ${modelo}`)) {
+                        anuncio.remove();
+                        alert(`Anúncio de ${marca} ${modelo} excluído com sucesso!`);
+                    }
+                });
             }
         }
+
     </script>
 </body>
 
