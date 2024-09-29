@@ -80,7 +80,7 @@
                 <span>R$ ${veiculo.valor}</span>
                 <div class="buttons">
                     <button onclick="redirecionarParaDetalhe('${veiculo.marca}', '${veiculo.modelo}', ${veiculo.ano}, '${veiculo.localizacao}', ${veiculo.valor}, '${JSON.stringify(veiculo.imagens).replace(/"/g, '&quot;')}')">Ver Detalhes</button>
-                    <button onclick="verInteresses('${veiculo.marca}', '${veiculo.modelo}')">Ver Interesses</button>
+                    <button onclick="redirecionarParaInteresses('${veiculo.marca}', '${veiculo.modelo}')">Ver Interesses</button>
                     <button onclick="excluirAnuncio('${veiculo.marca}', '${veiculo.modelo}')">Excluir</button>
                 </div>
             `;
@@ -98,6 +98,14 @@
             url.searchParams.append('imagens', imagens);
             window.location.href = url.toString();
         }
+        function redirecionarParaInteresses(marca, modelo) {
+            const url = new URL('paginasRestritas/listarInteresse.html', window.location.origin);
+            url.searchParams.append('marca', marca);
+            url.searchParams.append('modelo', modelo);
+            window.location.href = url.toString();
+        }
+
+        
 
         function excluirAnuncio(marca, modelo) {
             const confirmacao = confirm(`Tem certeza que deseja excluir o anúncio de ${marca} ${modelo}?`);

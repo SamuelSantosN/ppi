@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do veículo na WebCar Motors">
+    <title>Detalhes do Veículo - WebCar Motors</title>
+    <link rel="stylesheet" href="../style/style_interesses.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
+        <div>
+            <h1>Bem-vindo de volta!</h1>
+            <p>Pedro Dantas</p> <!--Por favor não retire se não o Header fica de tamnho diferente-->
+        </div>
+    </header>
+    <nav>
+        <ul>
+
+            <li><a href="home.html">Home</a></li>
+            <li><a href="cadastroAnuncio.html">Criar novo anúncio</a></li>
+            <li><a href="listarAnuncio.html">Meus Anúncios</a></li>
+            <li><a href="../paginasPublicas/index.html">Logoff</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="container"></section>
+    </main>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const marca = params.get('marca');
+        const modelo = params.get('modelo');
+    
+        const interesses = [
+            { nome: 'João Silva', telefone: '99999-9999', mensagem: 'Tenho interesse no veículo.' },
+            { nome: 'Maria Souza', telefone: '88888-8888', mensagem: 'Gostaria de negociar o preço.' },
+            { nome: 'Pedro Silva', telefone: '88888-8888', mensagem: '10000 no pix, pegar ou largar.' },
+            { nome: 'João Souza', telefone: '88888-8888', mensagem: 'Aceita troca?' }
+        ];
+    
+        const container = document.querySelector('.container');  // Seleciona o container correto
+    
+        interesses.forEach(interesse => {
+            const interesseDiv = document.createElement('div');  // Cria um novo elemento div
+            interesseDiv.classList.add('interesse');  // Adiciona a classe 'interesse' ao div
+            
+            interesseDiv.innerHTML = `
+                <p><strong>Nome:</strong> ${interesse.nome}</p>
+                <p><strong>Telefone:</strong> ${interesse.telefone}</p>
+                <p><strong>Mensagem:</strong> ${interesse.mensagem}</p>
+                <hr>
+            `;
+    
+            container.appendChild(interesseDiv);  // Adiciona o novo div ao container
+        });
+    </script>
+    
+</body>
+
+</html>
