@@ -14,7 +14,7 @@
         <img id="logo" src="../imagens/logo_130px.png" alt="Logo WebCar Motors">
         <div>
             <h1>Bem-vindo de volta!</h1>
-            <p>Pedro Dantas</p> <!--Por favor não retire se não o Header fica de tamnho diferente-->
+            <p>Pedro Dantas</p>
         </div>
     </header>
     <nav>
@@ -43,11 +43,11 @@
             { nome: 'João Souza', telefone: '88888-8888', mensagem: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates molestias libero tempore porro? Sint temporibus debitis, tenetur amet cum corrupti obcaecati odio incidunt quis quasi eveniet cumque eligendi laborum?.' }
         ];
 
-        const container = document.querySelector('.container');  // Seleciona o container correto
+        const container = document.querySelector('.container'); 
 
         interesses.forEach(interesse => {
-            const interesseDiv = document.createElement('div');  // Cria um novo elemento div
-            interesseDiv.classList.add('interesse');  // Adiciona a classe 'interesse' ao div
+            const interesseDiv = document.createElement('div'); 
+            interesseDiv.classList.add('interesse');  
 
             interesseDiv.innerHTML = `
                 <p><strong>Nome:</strong> ${interesse.nome}</p>
@@ -55,7 +55,7 @@
                 <p><strong>Mensagem:</strong> ${interesse.mensagem}</p>
             `;
 
-            container.appendChild(interesseDiv);  // Adiciona o novo div ao container
+            container.appendChild(interesseDiv);  
         });
     </script>
 
